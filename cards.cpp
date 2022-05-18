@@ -2,25 +2,26 @@
 // Author: Ashwath Ekambaram
 // Implementation of the classes defined in cards.h
 
-#include "cards.h"
 #include <iostream>
 #include <string>
+#include "cards.h"
+
 using namespace std;
 
 
 //constructor constructs empty tree
-template<class Tree>
+template <class Tree>
 BST<Tree>::BST() : root(nullptr) {
 }
 
 //destructor
-template<class Tree>
+template <class Tree>
 BST<Tree>::~BST(){
     clear(root);
 }
 
 //destructive helper
-template<class Tree>
+template <class Tree>
 void BST<Tree>::clear(Node *n) {
     if (n) {
         clear(n->left);
@@ -29,7 +30,7 @@ void BST<Tree>::clear(Node *n) {
     }
 }
 
-template<class Tree>
+template <class Tree>
 bool BST<Tree>::insert(Tree value) {
     if(!root){
         root = new Node(value);
@@ -38,7 +39,7 @@ bool BST<Tree>::insert(Tree value) {
     return insert(value, root);
 }
 
-template<class Tree>
+template <class Tree>
 bool BST<Tree>::insert(Tree value, Node *n) {
     if(value == n->info){
         return false;
@@ -71,7 +72,7 @@ void BST<Tree>::printPreOrder() const {
     printPreOrder(root);
 }
 
-template<class Tree>
+template <class Tree>
 void BST<Tree>::printPreOrder(Node *n) const{
     if (n) {
         cout << n->info;
@@ -80,12 +81,12 @@ void BST<Tree>::printPreOrder(Node *n) const{
     }
 }
 
-template<class Tree>
+template <class Tree>
 void BST<Tree>::printInOrder() const {
     printInOrder(root);
 }
 
-template<class Tree>
+template <class Tree>
 void BST<Tree>::printInOrder(Node *n) const {
     if (n) {
         printInOrder(n->left);
@@ -94,12 +95,12 @@ void BST<Tree>::printInOrder(Node *n) const {
     }
 }
 
-template<class Tree>
+template <class Tree>
 void BST<Tree>::printPostOrder() const {
         printPostOrder(root);
 }
 
-template<class Tree>
+template <class Tree>
 void BST<Tree>::printPostOrder(Node *n) const {
     if(n) {
         printPostOrder(n->left);
@@ -108,12 +109,12 @@ void BST<Tree>::printPostOrder(Node *n) const {
     }
 }
 
-template<class Tree>
+template <class Tree>
 int BST<Tree>::count() const{
     return count(root);
 }
 
-template<class Tree>
+template <class Tree>
 int BST<Tree>::count(Node *n) const {
     if(!n){
         return 0;
@@ -328,51 +329,49 @@ Card::Card(string s, string v) {
     else{
         // error
     }
-if(v == "a"){
+
+    if(v == "a"){
     value = 0;
-}
-else if (v == "1") {
+    }
+    else if (v == "2"){
     value = 1;
-}
-else if (v == "2"){
+    }
+    else if (v == "3"){
     value = 2;
-}
-else if (v == "3"){
+    }
+    else if (v == "4"){
     value = 3;
-}
-else if (v == "4"){
+    }
+    else if (v == "5"){
     value = 4;
-}
-else if (v == "5"){
+    }
+    else if (v == "6"){
     value = 5;
-}
-else if (v == "6"){
+    }
+    else if (v == "7"){
     value = 6;
-}
-else if (v == "7"){
+    }
+    else if (v == "8"){
     value = 7;
-}
-else if (v == "8"){
+    }
+    else if (v == "9"){
     value = 8;
-}
-else if (v == "9"){
+    }
+    else if (v == "10"){
     value = 9;
-}
-else if (v == "10"){
+    }
+    else if (v == "j"){
     value = 10;
-}
-else if (v == "j"){
+    }
+    else if (v == "q"){
     value = 11;
-}
-else if (v == "q"){
+    }
+    else if (v == "k"){
     value = 12;
-}
-else if (v == "k"){
-    value = 13;
-}
-else{
+    }
+    else{
     // error
-}
+    }
 }
 
 Card::Card(const Card& source){
@@ -409,42 +408,39 @@ string Card::getValue() const {
         return "a";
     }
     else if(value == 1) {
-        return "1";
-    }
-    else if(value == 2) {
         return "2";
     }
-    else if(value == 3) {
+    else if(value == 2) {
         return "3";
     }
-    else if(value == 4) {
+    else if(value == 3) {
         return "4";
     }
-    else if(value == 5) {
+    else if(value == 4) {
         return "5";
     }
-    else if(value == 6) {
+    else if(value == 5) {
         return "6";
     }
-    else if(value == 7) {
+    else if(value == 6) {
         return "7";
     }
-    else if(value == 8) {
+    else if(value == 7) {
         return "8";
     }
-    else if(value == 9) {
+    else if(value == 8) {
         return "9";
     }
-    else if(value == 10) {
+    else if(value == 9) {
         return "10";
     }
-    else if(value == 11) {
+    else if(value == 10) {
         return "j";
     }
-    else if(value == 12) {
+    else if(value == 11) {
         return "q";
     }
-    else if(value == 13) {
+    else if(value == 12) {
         return "k";
     }
     else{
