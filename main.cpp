@@ -1,8 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "cards.h"
 
 using namespace std;
+
+bool parseLine(string &line, int &cSuit, int &cValue);
 
 int main(int argv, char** argc){
   if(argv < 3){
@@ -13,6 +16,8 @@ int main(int argv, char** argc){
   ifstream cardFile1 (argc[1]);
   ifstream cardFile2 (argc[2]);
   string line;
+  int cSuit;
+  int cValue;
 
   if (cardFile1.fail() || cardFile2.fail() ){
     cout << "Could not open file " << argc[2];
@@ -20,17 +25,69 @@ int main(int argv, char** argc){
   }
 
   //Read each file
-  while (getline (cardFile1, line) && (line.length() > 0)){
+  //CardsBST player1;
+  //CardsBST player2;
+  while (getline (cardFile1, line) && (parseLine(line, cSuit, cValue))){
+     int suit = cSuit;
+     int value = cValue;
+
+     //player1.insert();
+     cout << suit << endl;
+     cout << value << endl;
 
   }
   cardFile1.close();
 
 
-  while (getline (cardFile2, line) && (line.length() > 0)){
+  while (getline (cardFile2, line) && (parseLine(line, cSuit, cValue))){
+    int suit = cSuit;
+    int value = cValue;
 
+    cout << suit << endl;
+    cout << value << endl;
+
+    //player2.insert();
   }
   cardFile2.close();
   
   
   return 0;
+}
+
+bool parseLine(string &line, int &cSuit, int &cValue) {
+  if(line.length() <= 0) return false;
+
+  char s = line[0];
+  string v = line.substr(2, line.length() - 2);
+
+  if(s == 'c'){
+      cSuit = 0;
+  }
+  else if(s == 'd'){
+      cSuit = 1;
+  }
+  else if(s == 's'){
+      cSuit = 2;
+  }
+  else if(s == 'h'){
+      cSuit = 3;
+  }
+
+  if (v == "a"){
+      cValue = 0;
+  }
+  else if (v == "j"){
+      cValue = 10;
+  }
+  else if (v == "q"){
+      cValue = 11;
+  }
+  else if (v == "k"){
+      cValue = 12;
+  }
+  else {
+      cValue = stoi(v) - 1;
+  }
+
+  return true;
 }
