@@ -9,7 +9,7 @@
 
 using namespace std;
 
-template<class Tree>
+template <class Tree>
 class BST {
     public:
         BST();
@@ -24,14 +24,14 @@ class BST {
         Tree getSuccessor(Tree value) const;
         Tree getMax() const;
         Tree getMin() const;
-        bool remove (Tree value);
+        bool remove(Tree value);
 
     private:
 
         struct Node {
             Tree info;
             Node *left, *right, * parent;
-        Node (Tree val = nullptr) : info(val), left(nullptr), right(nullptr), parent(nullptr) {}
+        Node (Tree v = nullptr) : info(v), left(nullptr), right(nullptr), parent(nullptr) {}
         };
         
         Node *root;
@@ -77,6 +77,5 @@ class Card {
 };
 
 
-//#include "cards.cpp"
 
 #endif
