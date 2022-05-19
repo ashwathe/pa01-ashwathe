@@ -76,6 +76,6 @@ class Card {
 
 };
 
-
+#include "cards.cpp"
 
 #endif

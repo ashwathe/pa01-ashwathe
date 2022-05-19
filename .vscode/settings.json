@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "ios": "cpp",
+        "deque": "cpp",
+        "functional": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "*.tcc": "cpp",
+        "random": "cpp"
+    }
+}

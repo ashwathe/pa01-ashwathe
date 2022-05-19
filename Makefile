@@ -1,12 +1,16 @@
-# Makefile
+CXX = g++
+CXXFLAGS = -Wall -Wno-uninitialized
 
-all: game tests
+BINARIES = game
 
-game : main.cpp cards.cpp cards.h
-	g++ -o game main.cpp cards.cpp
+game: main.o
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
 
-tests : cards.cpp tests.cpp tests.h
-	g++ -o tests cards.cpp tests.cpp
+tests: ${BINARIES}
+	./test
 
-clean :
-	rm game tests
+test: test.o
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
+
+clean:
+	/bin/rm -f main game *.o
