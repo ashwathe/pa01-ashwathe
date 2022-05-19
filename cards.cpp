@@ -315,59 +315,59 @@ bool BST<Tree>::remove(Tree value){
 
 Card::Card(string s, string v) {
     if(s == "c"){
-        suit = 1;
+        suit = 0;
     }
     else if(s == "d"){
-        suit = 2;
+        suit = 1;
     }
     else if(s == "s"){
-        suit = 3;
+        suit = 2;
     }
     else if(s == "h"){
-        suit = 4;
+        suit = 3;
     }
     else{
         // error
     }
 
     if(v == "a"){
-    value = 1;
+    value = 0;
     }
     else if (v == "2"){
-    value = 2;
+    value = 1;
     }
     else if (v == "3"){
-    value = 3;
+    value = 2;
     }
     else if (v == "4"){
-    value = 4;
+    value = 3;
     }
     else if (v == "5"){
-    value = 5;
+    value = 4;
     }
     else if (v == "6"){
-    value = 6;
+    value = 5;
     }
     else if (v == "7"){
-    value = 7;
+    value = 6;
     }
     else if (v == "8"){
-    value = 8;
+    value = 7;
     }
     else if (v == "9"){
-    value = 9;
+    value = 8;
     }
     else if (v == "10"){
-    value = 10;
+    value = 9;
     }
     else if (v == "j"){
-    value = 11;
+    value = 10;
     }
     else if (v == "q"){
-    value = 12;
+    value = 11;
     }
     else if (v == "k"){
-    value = 13;
+    value = 12;
     }
     else{
     // error
